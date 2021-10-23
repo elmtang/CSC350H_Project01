@@ -15,9 +15,7 @@ A game related to Elevens, called Thirteens, uses a 10-card board. Ace, 2, … ,
 Chances of winning are claimed to be about 1 out of 2.
 
 ## UML
-### Initial
 ![Initial UML](Initial.png)
-### Final
 
 
 
