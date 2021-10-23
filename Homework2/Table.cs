@@ -95,7 +95,7 @@ namespace Homework2
             } while (hand.Check(checkVal));
 
             // 8) Print the cards in the card list and the number of cards in the deck
-            Console.WriteLine("END: There are NO more valid combinations of " + checkVal + " in the hand:");
+            Console.WriteLine("GAME END: There are NO more valid combinations of " + checkVal + " in the hand:");
             hand.Print();
             Console.WriteLine("Remaining number of cards in deck:\t" + deck.Count);
 
