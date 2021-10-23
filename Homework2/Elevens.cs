@@ -39,6 +39,7 @@ namespace Homework2
                 value += selectedCards[i].Value;
             }
 
+            // Check if 1 King, 1 Queen, and 1 Jack in selectedCards
             bool K, Q, J;
             K = Q = J = false;
             foreach(Card c in selectedCards)
