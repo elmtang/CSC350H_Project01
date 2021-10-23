@@ -14,6 +14,7 @@ namespace Homework2
         public Elevens()
         {
             checkVal = 11;
+            cardsAmt = 10;
         }
     }
 }

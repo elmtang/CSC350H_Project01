@@ -13,14 +13,14 @@ namespace Homework2
         {
             Tens tens = new Tens();
             Elevens elevens = new Elevens();
-            Twelves twelves = new Twelves();
+            Thirteens thirteens = new Thirteens();
 
             int input;
             Console.WriteLine("Choose which game of cards you would like to play");
-            Console.WriteLine("1:\tTens\n2:\tElevens\n3:\tTwelves");
+            Console.WriteLine("1:\tTens\n2:\tElevens\n3:\tThirteens");
             Console.Write("Enter your selection:\t");
             input = Convert.ToInt32(Console.ReadLine());
-
+            
             switch(input)
             {
                 case 1:
@@ -30,7 +30,7 @@ namespace Homework2
                     elevens.Game();
                     break;
                 case 3:
-                    twelves.Game();
+                    thirteens.Game();
                     break;
                 default:
                     break;

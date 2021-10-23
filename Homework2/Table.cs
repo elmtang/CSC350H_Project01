@@ -14,10 +14,11 @@ namespace Homework2
         Deck deck;
         Hand hand;
         public int checkVal;
+        public int cardsAmt;
 
         public Table()
         {
-            
+
         }
 
         public void Init()
@@ -34,10 +35,10 @@ namespace Homework2
                 hand = new Hand();
 
                 // 4) Deal 10 cards from the deck and add them into the card list
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < cardsAmt; i++)
                     hand.AddCard(deck.TakeTopCard());
 
-                // Repeat if hand does not contain a combination of 10
+                // Repeat if hand does not contain a combination for the game
             } while (!hand.Check(checkVal));
         }
 
@@ -63,6 +64,7 @@ namespace Homework2
             Card[] selectedCards = new Card[2];
             do
             {
+                Console.WriteLine(deck.Count + " cards remain.");
                 Console.WriteLine("There are valid combinations of " + checkVal + " in the hand:");
                 // 5) Print cards in the card list and ask user to select two cards from the list from the command line
                 hand.Print();

@@ -9,11 +9,13 @@ using System.Text;
 
 namespace Homework2
 {
-    class Twelves : Table
+    class Thirteens : Table
     {
-        public Twelves()
+        public Thirteens()
         {
-            checkVal = 12;
+            checkVal = 13;
+            cardsAmt = 10;
+
         }
     }
 }
