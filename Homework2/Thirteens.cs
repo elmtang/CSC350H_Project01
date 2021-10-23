@@ -17,14 +17,14 @@ namespace Homework2
             cardsAmt = 10;
         }
 
-        public override void Instructions()
+        protected override void Instructions()
         {
             Console.WriteLine("A game related to Elevens, called Thirteens, uses a 10-card board. " +
                 "Ace, 2, … , 10, jack, queen correspond to the point values of 1, 2, …, 10, 11, 12. " +
                 "Pairs of cards whose point values add up to 13 are selected and removed. Kings are selected and removed singly.");
         }
 
-        public override int GameLogic()
+        protected override int GameLogic()
         {
             int value = 0;
             for (int i = 0; i < 2; i++)

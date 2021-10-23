@@ -25,14 +25,14 @@ namespace Homework2
             cardsAmt = 13;
         }
 
-        public override void Instructions()
+        protected override void Instructions()
         {
             Console.WriteLine("Another relative of Elevens, called Tens, uses a 13-card board. " +
                 "Pairs of cards whose point values add to 10 are selected and removed, as are " +
                 "quartets of kings, queens, jacks, and tens, all of the same rank (for example, K♠, K♥, K♦, and K♣).");
         }
 
-        public override int GameLogic()
+        protected override int GameLogic()
         {
             int value = 0;
             for (int i = 0; i < 4; i++)

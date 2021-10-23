@@ -11,21 +11,20 @@ namespace Homework2
 {
     class Elevens : Table
     {
-        string[] values = new string[] { "King", "Queen", "Jack" };
         public Elevens()
         {
             checkVal = 11;
             cardsAmt = 10;
         }
 
-        public override void Instructions()
+        protected override void Instructions()
         {
             Console.WriteLine("Elevens uses a 10-card board. " +
                 "Pairs of cards whose point values add to 11 are selected and removed, as are " +
                 "a combination of a king, queen, and jack.");
         }
 
-        public override int GameLogic()
+        protected override int GameLogic()
         {
             int value = 0;
             for (int i = 0; i < 3; i++)

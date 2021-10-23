@@ -19,8 +19,8 @@ namespace Homework2
 
         public Table(){}
 
-        public abstract void Instructions();
-        public abstract int GameLogic();
+        protected abstract void Instructions();
+        protected abstract int GameLogic();
 
         public void Init()
         {
