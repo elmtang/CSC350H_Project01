@@ -12,14 +12,15 @@ namespace Homework2
     abstract class Table
     {
         Deck deck;
-        Hand hand;
+        public Hand hand;
         public int checkVal;
         public int cardsAmt;
+        public List<Card> selectedCards = new List<Card>();
 
-        public Table()
-        {
+        public Table(){}
 
-        }
+        public abstract void Instructions();
+        public abstract int GameLogic();
 
         public void Init()
         {
@@ -61,22 +62,20 @@ namespace Homework2
 
         public void Play()
         {
-            Card[] selectedCards = new Card[2];
+            Instructions();
             do
             {
+                selectedCards = new List<Card>();
                 Console.WriteLine(deck.Count + " cards remain.");
                 Console.WriteLine("There are valid combinations of " + checkVal + " in the hand:");
+
                 // 5) Print cards in the card list and ask user to select two cards from the list from the command line
                 hand.Print();
-                Console.WriteLine("Select two cards by their index from the list");
-                for (int i = 0; i < 2; i++)
-                {
-                    Console.Write("Selected Card " + (i + 1) + ": ");
-                    selectedCards[i] = hand.GetCard(Convert.ToInt32(Console.ReadLine()) - 1);
-                }
 
-                // 6) Remove the two card from the list if the total value of the two cards equals to 10,
-                int value = selectedCards[0] + selectedCards[1];
+                Console.WriteLine("Select cards by their index from the list");
+                int value = GameLogic();
+
+                // 6) Remove the two card from the list if the total value of the two cards equals to checkVal
                 Console.WriteLine("Total Value is " + value);
                 if (value == checkVal)
                 {
@@ -84,15 +83,15 @@ namespace Homework2
 
                     // and then deal two more cards from the deck and fill the empty slots
                     Console.WriteLine("Replacing cards from the list!");
-                    for (int i = 0; i < 2; i++)
+                    foreach(Card c in selectedCards)
                     {
-                        int pos = hand.IndexOf(selectedCards[i]);
+                        int pos = hand.IndexOf(c);
                         hand.ReplaceCard(pos, deck.TakeTopCard());
                     }
                 }
                 else
                     Console.WriteLine("That was not a total value of " + checkVal + "...");
-                // 7) Repeat this task until user are not able to find two cards in the card list with toal equals 10
+                // 7) Repeat this task until user are not able to find two cards in the card list with toal equals checkVal
             } while (hand.Check(checkVal));
 
             // 8) Print the cards in the card list and the number of cards in the deck
