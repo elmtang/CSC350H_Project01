@@ -16,7 +16,7 @@ Chances of winning are claimed to be about 1 out of 2.
 
 ## UML
 ### Initial
-![Initial UML](/initial.png)
+![Initial UML](Initial.png)
 ### Final
 
 
